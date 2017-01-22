@@ -1,0 +1,29 @@
+duvidas:
+
+
+---------------------------------------------------------------------------
+
+--- 4 de janeiro -- resolvido
+palavras reservadas 'de' , 'a' entre outras
+
+--- 6 de janeiro -- resolvido
+- colocar todos os tokens em uma regra explicita
+- nova classe : analisador semantico : extends base visitor
+
+
+--- (11 ou 13) de janeiro
+- visit para atribuicao e para expressao
+- verificar:
+	- i = “1” -> Violação de significado
+	- verificar declaracao antes do uso 
+ 	- no intervalo de integração o primeiro valor deve ser maior que o segundo,
+  	  Trocando os limites de integração, a integral muda de sinal
+  	- Se f(x) é contínua sobre um intervalo [a,b] ela é integrável neste intervalo.
+	  	- Para definir continuidade devemos verificar se lim f(X) == f(Xo) para todos os valores do intervalo                                         X-> Xo
+  	  	Decisão final: Para usar intregacao, o programador deve saber se a funcao é contínua no intervalo
+  	- Caso esteja integrando uma funcao, verificar se o intervalo de integracao esta no dominio de f
+
+- adicionar variaveis na tabela de símbolos (regras atribuicao e funcao)
+- diferenciar os prints expressao e String ou imprimir tudo como string ?
+
+

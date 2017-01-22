@@ -1,0 +1,6 @@
+{R|R}
+f_l(x) = 2*x^(-1/2) + 2
+A = 3
+B = 12
+Vn = integre((1 + (f_l(x))^2)^(1/2))d x de A a B
+return Vn

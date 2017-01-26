@@ -1,4 +1,3 @@
-// Desenvolvido por : Alexandre
 grammar matematica;
 programa
  : bloco EOF
@@ -8,14 +7,14 @@ bloco
  : (declaracao)* ('return' expressao)?
  ;
 
-declaracao
- : atribuicao
- | funcao
- | print
+declaracao returns [String tipoDecl]
+ : atribuicao { $tipoDecl = "atribuicao"; }
+ | funcao     { $tipoDecl = "funcao";     }
+ | print      { $tipoDecl = "print";      }
  ;
 
-print
- : 'print' '('(expressao | String) ')'
+print returns [String tipoPrint]
+ : 'print' '('(expressao { $tipoPrint = "expressao"; } | String { $tipoPrint = "string"; }) ')'
  ;
 
 atribuicao
@@ -43,7 +42,7 @@ expressao returns [ String tipo ]
  | '(' expressao ')'       { $tipo = "parenteses";     }
  | valor                   { $tipo = "valor";          }
  | identificadorF          { $tipo = "identificadorF"; }
- | Identificador           { $tipo = "identificador";  }
+ | Identificador           { $tipo = "identificador";  } // retirar essa linha
  | seno                    { $tipo = "seno";           }
  | cosseno                 { $tipo = "cosseno";        }
  ;
@@ -80,9 +79,9 @@ cosseno
  : 'cos''('expressao')'
  ;
 
-valor
- : Numero
- | constante
+valor returns [ String tipo ]
+ : Numero    { $tipo = "numero";    }
+ | constante { $tipo = "constante"; }
  ;
 
 constante

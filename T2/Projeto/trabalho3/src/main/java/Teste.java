@@ -28,8 +28,7 @@ public class Teste {
         //parser.addErrorListener(e);
         VisitorMatematica v = new VisitorMatematica();
         matematicaParser.ProgramaContext arvore = parser.programa();
-        //MatValor val = v.visitPrograma(arvore);
-
+        v.visitPrograma(arvore);
 
 
         //PrintWriter outputTestCase = new PrintWriter(outputFilePath, "UTF-8");

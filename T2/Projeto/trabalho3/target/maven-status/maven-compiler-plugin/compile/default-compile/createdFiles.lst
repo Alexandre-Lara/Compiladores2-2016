@@ -1,6 +1,7 @@
 main/java/matematicaParser$IntervaloIntContext.class
 main/java/matematicaParser$ConstanteContext.class
 main/java/matematicaParser$AtribuicaoContext.class
+main/java/matematicaParser$RetornoContext.class
 main/java/EntradaTabelaDeSimbolos.class
 main/java/matematicaParser$ValorContext.class
 main/java/matematicaParser$IntegralContext.class

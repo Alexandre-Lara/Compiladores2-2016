@@ -46,6 +46,7 @@ class Funct2 implements IntegralFunction{
         this.c = c;
     }
 }
+// lucredio colocou codigo aqui
 
 // Class to demonstrate numerical integration methods in class Integration.
 public class IntegrationExample1{

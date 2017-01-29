@@ -9,11 +9,18 @@ print(4 / 2)
 mat(x) = x
 
 {R[-10<->10]|R}
-f(x) = x^5/2
+f(x) = x^(5/2)
 
 {Z[10<->+infinito]|Z}
 g(x) = x^2 + (-2*x) + 3 --- atencao no operador unario
 g(x) = x^2 - 2*x + 3
+
+class FunctionGX implements IntegralFunction {
+	public double function(double x) {
+		return Math.pow(x,2) - 2*x + 3;
+	}
+}
+
 
 {N|N}
 h(x) = (5*x + 2)^(1/3)
@@ -48,7 +55,7 @@ return Vn
 {R|R}
 f(x) = (1/4)*x^3 + 4
 Area = integre f(x) dx de 1 a 10 
-print Area
+print(Area)
 
 --- Sólidos de revolução. Figura 4
 {R|R}
@@ -56,14 +63,14 @@ f(x) = cos(x) + 1
 A = -2
 B = 8
 Vn = pi*(integre f(x)dx de A a B)
-print "Volume: "
-print Vn
+print("Volume: ")
+print(Vn)
 
 --- Momentos de Inércia de Sólidos
 r = 7.5
 Iz = integre r2 dV de 0 a V
-print "Volume do sólido: "
-print Iz
+print("Volume do sólido: ")
+print (Iz)
 
 --- Transformada de Fourier
 {R|R}
@@ -99,7 +106,7 @@ k1 =​ 100
 k2 = 20000
 v1 = integre f(x) dx de 0 a e
 v2 = integre f(x) dx de k1 a k2
-print v1
+print(v1)
 print(v1+v2)
 
 --- Expansões da linguagem

@@ -24,6 +24,12 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBloco(matematicaParser.BlocoContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link matematicaParser#retorno}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRetorno(matematicaParser.RetornoContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link matematicaParser#declaracao}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

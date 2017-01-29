@@ -29,6 +29,16 @@ public interface matematicaListener extends ParseTreeListener {
 	 */
 	void exitBloco(matematicaParser.BlocoContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link matematicaParser#retorno}.
+	 * @param ctx the parse tree
+	 */
+	void enterRetorno(matematicaParser.RetornoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#retorno}.
+	 * @param ctx the parse tree
+	 */
+	void exitRetorno(matematicaParser.RetornoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link matematicaParser#declaracao}.
 	 * @param ctx the parse tree
 	 */

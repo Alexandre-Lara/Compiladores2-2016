@@ -1,1 +1,69 @@
-print("5")
+// 1) - Teste da funcao print
+//print("**** Execução dos casos de teste ****")
+//print(5) 
+//print(1 + 999)
+//print(3 * 50)
+//print(4 / 2)
+//print(4 ^ 2)
+
+
+// 2) - Teste de calculo de expressões aritmeticas simples
+//a1 = 3
+//b1 = 5
+//c1 = a1 + b1
+//c2 = a1 - b1
+//c3 = a1 / b1
+//c4 = a1 * b1
+//c5 = a1 ^ b1
+//c6 = -a1
+//c7 = (c2*(a1^2))/(a1 - 1)
+//print("a1")
+//print(a1)
+//print("b1")
+//print(b1)
+//print("c1")
+//print(c1)
+//print("c2")
+//print(c2)
+//print("c3")
+//print(c3)
+//print("c4")
+//print(c4)
+//print("c5")
+//print(c5)
+//print("c6")
+//print(c6)
+//print("c7")
+//print(c7)
+
+// 3) - Testes de manipulação das constantes (pi, e, +infinito, etc)
+//k1 = pi
+//k2 = e
+//print(k1 + k2)
+//print(-e)
+//print(+infinito)
+//print(-infinito)
+//print(+infinito - (+infinito))
+//print(-infinito + k1)
+
+// 4) - Testes de manipulação das constantes (pi, e, +infinito, etc)
+//k1 = pi
+//k2 = e
+//print(k1 + k2)
+//print(-e)
+//print(+infinito)
+//print(-infinito)
+//print(+infinito - (+infinito))
+//print(-infinito + k1)
+
+// 5) - Testes das funcoes seno e cosseno
+sen1 = sen(pi/4)
+cos1 = cos(0)
+tg  = sen1/cos1
+print(sen1 + cos1)
+print(tg)
+
+
+// 6) - Teste da regra retorno
+//return (2*(2^2))/(4 - 1)
+//return "fim da execução do programa" 

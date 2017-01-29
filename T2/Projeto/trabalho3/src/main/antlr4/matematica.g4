@@ -4,8 +4,12 @@ programa
  ;
 
 bloco
- : (declaracao)* ('return' expressao)?
+ : (declaracao)* (retorno)?
  ;
+
+retorno returns [String tipo]
+ :'return' (expressao { $tipo = "expressao"; } | String { $tipo = "string"; } )
+ ; 
 
 declaracao returns [String tipoDecl]
  : atribuicao { $tipoDecl = "atribuicao"; }
@@ -14,7 +18,8 @@ declaracao returns [String tipoDecl]
  ;
 
 print returns [String tipoPrint]
- : 'print' '('(expressao { $tipoPrint = "expressao"; } | String { $tipoPrint = "string"; }) ')'
+ : 'print' '('(expressao     { $tipoPrint = "expressao";     }
+ 	         | String        { $tipoPrint = "string";        }) ')'
  ;
 
 atribuicao
@@ -34,7 +39,7 @@ funcao
 expressao returns [ String tipo ]
  : '-' expressao           { $tipo = "unario";         }
  | integral                { $tipo = "integral";       }
- | expressao '^' expressao { $tipo = "exponencial";    }
+ | expressao '^' expressao { $tipo = "potencia";       }
  | expressao '*' expressao { $tipo = "multiplicacao";  }
  | expressao '/' expressao { $tipo = "divisao";        }
  | expressao '+' expressao { $tipo = "soma";           }
@@ -42,7 +47,7 @@ expressao returns [ String tipo ]
  | '(' expressao ')'       { $tipo = "parenteses";     }
  | valor                   { $tipo = "valor";          }
  | identificadorF          { $tipo = "identificadorF"; }
- | Identificador           { $tipo = "identificador";  } // retirar essa linha
+ | Identificador           { $tipo = "identificador";  }
  | seno                    { $tipo = "seno";           }
  | cosseno                 { $tipo = "cosseno";        }
  ;

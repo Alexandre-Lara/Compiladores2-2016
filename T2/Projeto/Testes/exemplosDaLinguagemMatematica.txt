@@ -101,7 +101,7 @@ aceleracao(v) = v^2 -(4*a1*c)
 
 --- Programa
 {R|R}
-f(x) = x^2+2*x+1
+f(x) = x^2 +2x +1
 k1 =​ 100
 k2 = 20000
 v1 = integre f(x) dx de 0 a e

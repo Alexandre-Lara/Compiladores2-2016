@@ -1,69 +1,113 @@
-// 1) - Teste da funcao print
-//print("**** Execução dos casos de teste ****")
-//print(5) 
-//print(1 + 999)
-//print(3 * 50)
-//print(4 / 2)
-//print(4 ^ 2)
+/*
+//1) - Teste da funcao print
 
+print("**** Execução dos casos de teste ****")
+print(5) 
+print(1 + 999)
+print(3 * 50)
+print(4 / 2)
+print(4 ^ 2)
 
-// 2) - Teste de calculo de expressões aritmeticas simples
-//a1 = 3
-//b1 = 5
-//c1 = a1 + b1
-//c2 = a1 - b1
-//c3 = a1 / b1
-//c4 = a1 * b1
-//c5 = a1 ^ b1
-//c6 = -a1
-//c7 = (c2*(a1^2))/(a1 - 1)
-//print("a1")
-//print(a1)
-//print("b1")
-//print(b1)
-//print("c1")
-//print(c1)
-//print("c2")
-//print(c2)
-//print("c3")
-//print(c3)
-//print("c4")
-//print(c4)
-//print("c5")
-//print(c5)
-//print("c6")
-//print(c6)
-//print("c7")
-//print(c7)
+//2) - Teste de calculo de expressões aritmeticas simples
 
-// 3) - Testes de manipulação das constantes (pi, e, +infinito, etc)
-//k1 = pi
-//k2 = e
-//print(k1 + k2)
-//print(-e)
-//print(+infinito)
-//print(-infinito)
-//print(+infinito - (+infinito))
-//print(-infinito + k1)
+a1 = 3
+b1 = 5
+c1 = a1 + b1
+c2 = a1 - b1
+c3 = a1 / b1
+c4 = a1 * b1
+c5 = a1 ^ b1
+c6 = -a1
+c7 = (c2*(a1^2))/(a1 - 1)
+print("a1")
+print(a1)
+print("b1")
+print(b1)
+print("c1")
+print(c1)
+print("c2")
+print(c2)
+print("c3")
+print(c3)
+print("c4")
+print(c4)
+print("c5")
+print(c5)
+print("c6")
+print(c6)
+print("c7")
+print(c7)
 
-// 4) - Testes de manipulação das constantes (pi, e, +infinito, etc)
-//k1 = pi
-//k2 = e
-//print(k1 + k2)
-//print(-e)
-//print(+infinito)
-//print(-infinito)
-//print(+infinito - (+infinito))
-//print(-infinito + k1)
+//3) - Testes de manipulação das constantes (pi, e, +infinito, etc)
 
-// 5) - Testes das funcoes seno e cosseno
+k1 = pi
+k2 = e
+print(k1 + k2)
+print(-e)
+print(+infinito)
+print(-infinito)
+print(+infinito - (+infinito))
+print(-infinito + k1)
+
+//4) - Testes das funcoes seno e cosseno
+
 sen1 = sen(pi/4)
 cos1 = cos(0)
 tg  = sen1/cos1
 print(sen1 + cos1)
 print(tg)
 
+//5) - Teste da regra retorno
 
-// 6) - Teste da regra retorno
-//return (2*(2^2))/(4 - 1)
-//return "fim da execução do programa" 
+return (2*(2^2))/(4 - 1)
+return "fim da execução do programa" 
+
+
+// 6) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas
+
+print("*** Funcoes polinomiais ***") 
+f(x) = x
+g(x) = x^2 -2x +3 
+h(x) = -3
+l(x) = 3x^3
+k(x) = x^2 -2x +3 
+print("Exibindo funcoes:")
+print(f(x))
+print(g(x))
+print(h(x))
+print(l(x))
+print(k(x))
+
+print("Calculando funcoes em um ponto")
+print(f(1))
+print(g(2))
+print(h(0))
+print(l(-1))
+print(k(1))
+
+print("Atribuindo a uma variavel a avaliacao de uma funcao em um ponto")
+a2 = l(3)
+print(a2)
+*/
+print("*** Funcoes trigonometricas ***") 
+c1(x) = cos(x)
+s1(x) = sen(x)
+print(c1(pi))
+print(s1(pi/2))
+
+/*
+
+// 7) - Testes de integração
+
+//integralDef = integre f(x)dx de 0 a 1
+//print(integralDef)
+//print(f(x))
+cos1(x) = x^2 -2x +3 
+a1 = integre f(x)dx de 0 a 5
+print(a1)
+
+
+f(x) = x^4  +1x//+1x^4 +1x^3 +1x^2 +1x +3
+a1 = f(1.2)
+print(a1)
+*/

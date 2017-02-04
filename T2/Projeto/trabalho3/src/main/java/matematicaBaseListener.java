@@ -101,6 +101,66 @@ public class matematicaBaseListener implements matematicaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPolinomio(matematicaParser.PolinomioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPolinomio(matematicaParser.PolinomioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMonomio(matematicaParser.MonomioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMonomio(matematicaParser.MonomioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIncognita(matematicaParser.IncognitaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIncognita(matematicaParser.IncognitaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCoeficiente(matematicaParser.CoeficienteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCoeficiente(matematicaParser.CoeficienteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExpoente(matematicaParser.ExpoenteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExpoente(matematicaParser.ExpoenteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIntegral(matematicaParser.IntegralContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -125,13 +185,25 @@ public class matematicaBaseListener implements matematicaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntervaloInt(matematicaParser.IntervaloIntContext ctx) { }
+	@Override public void enterIntervaloIntegracao(matematicaParser.IntervaloIntegracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIntervaloInt(matematicaParser.IntervaloIntContext ctx) { }
+	@Override public void exitIntervaloIntegracao(matematicaParser.IntervaloIntegracaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -240,6 +312,18 @@ public class matematicaBaseListener implements matematicaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConstante(matematicaParser.ConstanteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumeroComSinal(matematicaParser.NumeroComSinalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumeroComSinal(matematicaParser.NumeroComSinalContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,28 +1,20 @@
 package main.java;
-import java.util.HashMap;
-//import flanagan.integration.Integration;
-//import flanagan.integration.IntegralFunction;
 
+import org.apache.commons.math3.analysis.function.Cos;
+import org.apache.commons.math3.analysis.function.Sin;
+
+import java.util.HashMap;
 /**
  * Created by alexandre on 06/01/17.
  */
-
-class FuncaoGenerica {
-    double[] coeficientes;
-
-    // 5 + 4x + x^2
-    //coeficientes = {5, 4, 1};
-
-    FuncaoGenerica(double[] coefs) {
-        this.coeficientes = coefs;
-    }
-}
 
 
 class EntradaTabelaDeSimbolos {
     public String nome;
     public double valor;
     public double[] coefs;
+    public Cos cosseno;
+    public Sin seno;
 }
 
 public class TabelaDeSimbolos {
@@ -44,6 +36,18 @@ public class TabelaDeSimbolos {
         EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
         etds.nome = nome;
         etds.coefs = valor;
+        tabelaDeSimbolos.put(nome, etds);
+    }
+    public void inserirSeno(String nome) {
+        EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
+        etds.nome = nome;
+        etds.seno = new Sin();
+        tabelaDeSimbolos.put(nome, etds);
+    }
+    public void inserirCosseno(String nome) {
+        EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
+        etds.nome = nome;
+        etds.cosseno = new Cos();
         tabelaDeSimbolos.put(nome, etds);
     }
 

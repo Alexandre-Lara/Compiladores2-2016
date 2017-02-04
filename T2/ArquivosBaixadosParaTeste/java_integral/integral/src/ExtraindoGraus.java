@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 /**
@@ -18,12 +19,16 @@ public class ExtraindoGraus {
         //System.out.println(m[1]);
         //System.out.println(m[2]);
 
-        String polynomial= "-2x^2 +3x^1 + 6";
+        String polynomial= "-2x^2 +3x^1 +6";
         String[] parts = polynomial.split("x\\^\\d+\\+?");
+
+        //Double[] coefs = new Double[];
+        ArrayList<Double> coefs = new ArrayList<Double>();
         for (String part : parts) {
+            coefs.add(Double.parseDouble(part));
             System.out.println(part);
         }
-
+        System.out.println(coefs);
 
         polynomial= "1x^2+2x^1+1";
         parts = polynomial.split("x\\^\\d+\\+?");

@@ -1,4 +1,5 @@
 grammar matematica;
+
 programa
  : bloco EOF
  ;
@@ -26,14 +27,39 @@ atribuicao
  : Identificador  '=' expressao
  ;
 
-funcao
- : (relacao)? seno
- | (relacao)? cosseno
- | (relacao)? identificadorF '=' expressao
+funcao returns [String tipo]
+ : (relacao)? identificadorF '=' seno       { $tipo = "seno";     }
+ | (relacao)? identificadorF '=' cosseno    { $tipo = "cosseno";  }
+ | (relacao)? identificadorF '=' polinomio  { $tipo = "polinomio";}
+ | identificadorF
+ ;
+
+//(+|-)x^(n) (+|-)x^(n - 1) ... (+|-)x^(1) (+|-)n
+
+polinomio
+ :
+ | monomio+
+ ;
+
+monomio
+ : coeficiente? incognita expoente?
+ | coef2 = coeficiente
+ ;
+
+incognita
+ : Identificador
+ ;
+
+coeficiente
+ : numeroComSinal 
+ ;
+
+expoente
+ : '^' numeroComSinal
  ;
 
  integral
- : 'integre' expressao 'd' Identificador (intervaloInt)?
+ : 'integre' expressao 'd' Identificador (intervaloIntegracao)?
  ;
 
 expressao returns [ String tipo ]
@@ -52,12 +78,16 @@ expressao returns [ String tipo ]
  | cosseno                 { $tipo = "cosseno";        }
  ;
 
-intervaloInt
- : 'de' (valor | ID1 = Identificador) 'a' (valor | ID2 = Identificador)
+intervaloIntegracao
+ : 'de' l1 = limiteIntegracao 'a' l2 = limiteIntegracao 
+ ;
+
+limiteIntegracao
+ : (valor | Identificador)
  ;
 
 identificadorF
- : ID1 = Identificador '('ID2 = Identificador')'
+ : ID1 = Identificador '('(ID2 = Identificador | Numero | expressao)')'
  ;
 
 relacao
@@ -96,6 +126,11 @@ constante
  | 'e'   //euler
  ;
 
+numeroComSinal
+ : Numero
+ | '+'Numero
+ ;
+
 Identificador
  : ('a'..'c'|'e'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
  ;
@@ -105,13 +140,13 @@ Numero
  | '-'Int ('.' Digito*)?
  ;
 
-Letra
- : 'a'..'z'
- | 'A'..'Z'
- ;
-
 String
  : '"' ~('\r'|'\n')*? '"'
+	 {
+	  String s = getText();
+	  s = s.substring(1, s.length() - 1);
+	  setText(s);
+	 }
  ;
 
 Comentario
@@ -120,6 +155,11 @@ Comentario
 
 Espaco
  : [ \t\r\n\u000C] -> skip
+ ;
+
+Letra
+ :'a'..'z'
+ |'A'..'Z'
  ;
 
 fragment Int

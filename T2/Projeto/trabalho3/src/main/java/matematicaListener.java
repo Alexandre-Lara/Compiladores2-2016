@@ -79,6 +79,56 @@ public interface matematicaListener extends ParseTreeListener {
 	 */
 	void exitFuncao(matematicaParser.FuncaoContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link matematicaParser#polinomio}.
+	 * @param ctx the parse tree
+	 */
+	void enterPolinomio(matematicaParser.PolinomioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#polinomio}.
+	 * @param ctx the parse tree
+	 */
+	void exitPolinomio(matematicaParser.PolinomioContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#monomio}.
+	 * @param ctx the parse tree
+	 */
+	void enterMonomio(matematicaParser.MonomioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#monomio}.
+	 * @param ctx the parse tree
+	 */
+	void exitMonomio(matematicaParser.MonomioContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#incognita}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncognita(matematicaParser.IncognitaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#incognita}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncognita(matematicaParser.IncognitaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#coeficiente}.
+	 * @param ctx the parse tree
+	 */
+	void enterCoeficiente(matematicaParser.CoeficienteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#coeficiente}.
+	 * @param ctx the parse tree
+	 */
+	void exitCoeficiente(matematicaParser.CoeficienteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#expoente}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpoente(matematicaParser.ExpoenteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#expoente}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpoente(matematicaParser.ExpoenteContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link matematicaParser#integral}.
 	 * @param ctx the parse tree
 	 */
@@ -99,15 +149,25 @@ public interface matematicaListener extends ParseTreeListener {
 	 */
 	void exitExpressao(matematicaParser.ExpressaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link matematicaParser#intervaloInt}.
+	 * Enter a parse tree produced by {@link matematicaParser#intervaloIntegracao}.
 	 * @param ctx the parse tree
 	 */
-	void enterIntervaloInt(matematicaParser.IntervaloIntContext ctx);
+	void enterIntervaloIntegracao(matematicaParser.IntervaloIntegracaoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link matematicaParser#intervaloInt}.
+	 * Exit a parse tree produced by {@link matematicaParser#intervaloIntegracao}.
 	 * @param ctx the parse tree
 	 */
-	void exitIntervaloInt(matematicaParser.IntervaloIntContext ctx);
+	void exitIntervaloIntegracao(matematicaParser.IntervaloIntegracaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#limiteIntegracao}.
+	 * @param ctx the parse tree
+	 */
+	void enterLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#limiteIntegracao}.
+	 * @param ctx the parse tree
+	 */
+	void exitLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link matematicaParser#identificadorF}.
 	 * @param ctx the parse tree
@@ -198,4 +258,14 @@ public interface matematicaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstante(matematicaParser.ConstanteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#numeroComSinal}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumeroComSinal(matematicaParser.NumeroComSinalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#numeroComSinal}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumeroComSinal(matematicaParser.NumeroComSinalContext ctx);
 }

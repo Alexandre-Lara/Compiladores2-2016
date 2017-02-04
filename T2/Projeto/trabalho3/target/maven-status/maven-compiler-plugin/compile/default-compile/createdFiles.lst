@@ -1,8 +1,8 @@
-main/java/matematicaParser$IntervaloIntContext.class
 main/java/matematicaParser$ConstanteContext.class
 main/java/matematicaParser$AtribuicaoContext.class
 main/java/matematicaParser$RetornoContext.class
 main/java/EntradaTabelaDeSimbolos.class
+main/java/matematicaParser$PolinomioContext.class
 main/java/matematicaParser$ValorContext.class
 main/java/matematicaParser$IntegralContext.class
 main/java/matematicaLexer.class
@@ -20,10 +20,17 @@ main/java/matematicaParser$IdentificadorFContext.class
 main/java/matematicaParser$IntervaloContext.class
 main/java/matematicaBaseListener.class
 main/java/Dominio.class
+main/java/matematicaParser$NumeroComSinalContext.class
 main/java/matematicaParser$ContradominioContext.class
 main/java/matematicaBaseVisitor.class
 main/java/matematicaParser$PrintContext.class
+main/java/matematicaParser$MonomioContext.class
+main/java/matematicaParser$CoeficienteContext.class
+main/java/matematicaParser$ExpoenteContext.class
 main/java/matematicaParser$BlocoContext.class
+main/java/matematicaParser$IncognitaContext.class
+main/java/matematicaParser$IntervaloIntegracaoContext.class
+main/java/matematicaParser$LimiteIntegracaoContext.class
 main/java/Intervalo.class
 main/java/matematicaParser$RelacaoContext.class
 main/java/MatValor.class

@@ -54,6 +54,36 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFuncao(matematicaParser.FuncaoContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link matematicaParser#polinomio}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPolinomio(matematicaParser.PolinomioContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#monomio}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMonomio(matematicaParser.MonomioContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#incognita}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIncognita(matematicaParser.IncognitaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#coeficiente}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCoeficiente(matematicaParser.CoeficienteContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#expoente}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpoente(matematicaParser.ExpoenteContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link matematicaParser#integral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -66,11 +96,17 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpressao(matematicaParser.ExpressaoContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link matematicaParser#intervaloInt}.
+	 * Visit a parse tree produced by {@link matematicaParser#intervaloIntegracao}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIntervaloInt(matematicaParser.IntervaloIntContext ctx);
+	T visitIntervaloIntegracao(matematicaParser.IntervaloIntegracaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#limiteIntegracao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link matematicaParser#identificadorF}.
 	 * @param ctx the parse tree
@@ -125,4 +161,10 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConstante(matematicaParser.ConstanteContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#numeroComSinal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumeroComSinal(matematicaParser.NumeroComSinalContext ctx);
 }

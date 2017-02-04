@@ -1,8 +1,11 @@
 package main.java;
 
+import org.apache.commons.math3.analysis.function.Cos;
+import org.apache.commons.math3.analysis.function.Sin;
 import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
 import org.apache.commons.math3.analysis.integration.UnivariateIntegrator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialFunction;
+import org.apache.commons.math3.util.FastMath;
 
 import java.util.HashMap;
 import java.util.NavigableMap;
@@ -39,7 +42,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
     @Override
     public Double visitPrint(matematicaParser.PrintContext ctx) {
         if (ctx.tipoPrint.equals("expressao")) {
-            if (ctx.expressao().tipo.equals("identificadorF")&& (ctx.expressao().identificadorF().Numero() == null && (ctx.expressao().identificadorF().expressao() == null))) {
+            if (ctx.expressao().tipo.equals("identificadorF")&& (ctx.expressao().identificadorF().expressao() == null && (ctx.expressao().identificadorF().expressao() == null))) {
                 EntradaTabelaDeSimbolos etds = tds.verificar(ctx.expressao().identificadorF().ID1.getText());
                 if (etds == null) {
                     throw new RuntimeException("ERRO SEMÂNTICO: A função que se deseja imprimir nao foi declarada.");
@@ -74,10 +77,10 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
     public Double visitAtribuicao(matematicaParser.AtribuicaoContext ctx) {
         // redeclaracao de variavel ou funcao
         if(tds.verificar(ctx.Identificador().getText()) != null){
-            throw new RuntimeException("Erro semântico: Variavel ou funcao "+ctx.Identificador().getText()+"redeclarada.");
+            throw new RuntimeException("Erro semântico: Variavel ou funcao "+ctx.Identificador().getText()+" redeclarada.");
         }
 
-        else if(ctx.expressao().tipo.equals("identificadorF") && (ctx.expressao().identificadorF().Numero() == null)){
+        else if(ctx.expressao().tipo.equals("identificadorF") && (ctx.expressao().identificadorF().expressao() == null)){
             throw new RuntimeException("Erro semântico: Não é possível atribuir uma funcao a uma variável.");
         }
 
@@ -96,7 +99,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
             if (tds.verificar(ctx.identificadorF().ID1.getText()) != null) { // caso em q uma variavel ja tem o mesmo nome da funcao
                 throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " Redeclaração de variável ou funcao");
             } else {
-                if (ctx.identificadorF().Numero() != null) {
+                if (ctx.identificadorF().expressao() != null) {
                     throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " A funcao deve ser do tipo f(x), onde f e x são identificadores.");
                 } else {
                     HashMap<Double, Double> expCoef = new HashMap<>(); //par : coeficiente -> expoente
@@ -117,7 +120,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
                                 exp = Double.parseDouble(ctx.polinomio().monomio(i).expoente().numeroComSinal().getText());
                             }
                         }
-                        expCoef.put(exp, coef); // TODO: como tratar erros do sintatico
+                        expCoef.put(exp, coef);
                     }
                     NavigableMap<Double, Double> expoentesCoeficientes = new TreeMap<>(expCoef);
                     int maiorExp = Double.valueOf(expoentesCoeficientes.lastKey()).intValue();
@@ -131,9 +134,6 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
                             coeficientes[i] = 0.0;
                         }
                     }
-                    //for (double i : coeficientes){
-                    //   System.out.println("Vetor :" + Double.toString(i));
-                    //}
                     tds.inserirFuncao(ctx.identificadorF().ID1.getText(), coeficientes);
                 }
             }
@@ -142,12 +142,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
             if (tds.verificar(ctx.identificadorF().ID1.getText()) != null) { // caso em q uma variavel ja tem o mesmo nome da funcao
                 throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " Redeclaração de variável ou funcao");
             }
-            //System.out.println("---------");
             tds.inserirCosseno(ctx.identificadorF().ID1.getText());
-            //EntradaTabelaDeSimbolos x = tds.verificar(ctx.identificadorF().getText());
-            //System.out.println(x.nome);
-            //System.out.println(x.cosseno);
-            //System.out.println("---------");
         }
         else if (ctx.tipo.equals("seno")){
             if (tds.verificar(ctx.identificadorF().ID1.getText()) != null) { // caso em q uma variavel ja tem o mesmo nome da funcao
@@ -170,30 +165,30 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
 
         if(ctx.tipo.equals("identificadorF")){
             //retornar o valor de uma funcao calculada em um ponto
-            if(ctx.identificadorF().Numero() != null || ctx.identificadorF().expressao() != null) {
+            if(ctx.identificadorF().expressao() != null || ctx.identificadorF().expressao() != null) {
                 if (tds.verificar(ctx.identificadorF().ID1.getText()) == null) {
                     throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " A funcao que se desejar avaliar não foi declarada.");
                 } else {
                     EntradaTabelaDeSimbolos etds = tds.verificar(ctx.identificadorF().ID1.getText());
                     if(etds.cosseno == null && etds.seno == null ) {
                         PolynomialFunction f = new PolynomialFunction(etds.coefs);
-                        return f.value(Double.parseDouble(ctx.identificadorF().Numero().getText()));
+                        return f.value(visitExpressao(ctx.identificadorF().expressao()));
                     }
                     else if (etds.cosseno == null) {
-                        if(ctx.identificadorF().Numero().getText() != null) {
-                            return etds.seno.value(Double.parseDouble(ctx.identificadorF().Numero().getText()));
+                        if(ctx.identificadorF().expressao().getText() != null) {
+                            return etds.seno.value(visitExpressao(ctx.identificadorF().expressao()));
                         }
                         else {
                             return etds.seno.value(visitExpressao(ctx.identificadorF().expressao()));
                         }
                     }
                     else {
-                        return etds.cosseno.value(Double.parseDouble(ctx.identificadorF().Numero().getText()));
+                        return etds.cosseno.value(visitExpressao(ctx.identificadorF().expressao()));
                     }
                 }
             }
             else {
-                throw new RuntimeException("Erro semântico: Não é possivel avaliar a função no ponto: " + ctx.identificadorF().Numero().getText() + ".");
+                throw new RuntimeException("Erro semântico: Não é possivel avaliar a função no ponto: " + visitExpressao(ctx.identificadorF().expressao()) + ".");
             }
         }
 
@@ -247,20 +242,97 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
 
         else if (ctx.tipo.equals("integral")){
             //calcular e retornar o valor da integral da expressao
+            double l1 = visitLimiteIntegracao(ctx.integral().intervaloIntegracao().l1);
+            double l2 = visitLimiteIntegracao(ctx.integral().intervaloIntegracao().l2);
+            int inverte = 1;
+            if( l1 > l2) {
+                inverte = -1;
+            }
             if (ctx.integral().expressao().tipo.equals("identificadorF")){
                 if (tds.verificar(ctx.integral().expressao().identificadorF().ID1.getText()) == null){
                     throw new RuntimeException("ERRO SEMÂNTICO: A função que se deseja integrar nao foi declarada.");
                 }
                 else {
-                    EntradaTabelaDeSimbolos funcao = tds.verificar(ctx.integral().expressao().identificadorF().ID1.getText());
-                    PolynomialFunction f = new PolynomialFunction(funcao.coefs);
-                    double l1 = visitLimiteIntegracao(ctx.integral().intervaloIntegracao().l1);
-                    double l2 = visitLimiteIntegracao(ctx.integral().intervaloIntegracao().l2);
-                    UnivariateIntegrator integrator = new SimpsonIntegrator(relativeAccuracy, absoluteAccuracy,
-                                                                            minimalIterationCount, maximalIterationCount);
-                    return integrator.integrate(loops, f, l1, l2);
+                    EntradaTabelaDeSimbolos etds = tds.verificar(ctx.integral().expressao().identificadorF().ID1.getText());
+                    if(etds.cosseno == null && etds.seno == null ) {
+                         PolynomialFunction f = new PolynomialFunction(etds.coefs);
+                         UnivariateIntegrator integrator = new SimpsonIntegrator(relativeAccuracy, absoluteAccuracy,
+                                 minimalIterationCount, maximalIterationCount);
+                         return inverte*integrator.integrate(loops, f, l1, l2);
+                     }
+                     else if(etds.seno == null){
+                         Sin seno = new Sin();
+                         return inverte*(seno.value(l2) - seno.value(l1));
+                     }
+                     else {
+                        Cos cos = new Cos();
+                        return inverte*(-1*cos.value(l2) -( -1*cos.value(l1) ));
+                     }
+
                 }
+
             }
+            else {
+                double[] constante = new double[1];
+                constante[0] = visitExpressao(ctx.integral().expressao());
+                PolynomialFunction f = new PolynomialFunction(constante);
+                UnivariateIntegrator integrator = new SimpsonIntegrator(relativeAccuracy, absoluteAccuracy,
+                        minimalIterationCount, maximalIterationCount);
+                return inverte*integrator.integrate(loops, f, l1, l2);
+            }
+        }
+
+        else if(ctx.tipo.equals("derivada")){
+            //derivar a expressao
+            boolean calcular = false;
+            double valor = 0;
+            if (ctx.derivada().pontoDerivacao() != null) {
+                calcular =true;
+                valor = visitExpressao(ctx.derivada().pontoDerivacao().expressao());
+            }
+            if (ctx.derivada().expressao().tipo.equals("identificadorF")){
+                if (tds.verificar(ctx.derivada().expressao().identificadorF().ID1.getText()) == null){
+                    throw new RuntimeException("ERRO SEMÂNTICO: A função que se deseja derivar nao foi declarada.");
+                }
+                else {
+                    EntradaTabelaDeSimbolos etds = tds.verificar(ctx.derivada().expressao().identificadorF().ID1.getText());
+                    if(etds.cosseno == null && etds.seno == null ){
+                        PolynomialFunction f = new PolynomialFunction(etds.coefs);
+                        PolynomialFunction fLinha = f.polynomialDerivative();
+                        if(calcular){
+                            return fLinha.value(valor);
+                        }
+                        return null;
+                    }
+                    else if(etds.seno == null){
+                        Sin seno = new Sin();
+                        if(calcular){
+                            return -1*(seno.value(valor));
+                        }
+                        return null;
+                    }
+                    else {
+                        Cos cos = new Cos();
+                        if(calcular){
+                            return cos.value(valor);
+                        }
+                        return null;
+                    }
+                }
+
+            }
+            else {
+                double[] constante = new double[1];
+                constante[0] = visitExpressao(ctx.derivada().expressao());
+                PolynomialFunction f = new PolynomialFunction(constante);
+                PolynomialFunction fLinha = f.polynomialDerivative();
+                if(calcular){
+                    return fLinha.value(valor);
+                }
+                return null;
+            }
+
+
         }
 
         else if (ctx.tipo.equals("parenteses")){
@@ -283,13 +355,17 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
     @Override
     public Double visitSeno(matematicaParser.SenoContext ctx) {
         Double exp0 = visitExpressao(ctx.expressao());
-        return Math.sin(exp0);
+        //Sin aux = new Sin();
+        //return aux.value(exp0);
+        return FastMath.sin(exp0);
     }
 
     @Override
     public Double visitCosseno(matematicaParser.CossenoContext ctx) {
         Double exp0 = super.visitExpressao(ctx.expressao());
-        return Math.cos(exp0);
+        //Cos aux = new Cos();
+        //return aux.value(exp0);
+        return FastMath.cos(exp0);
     }
 
     @Override
@@ -312,7 +388,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
             return Double.NEGATIVE_INFINITY;
         }
         if(ctx.getText() == "pi"){
-            return Math.PI;
+            return FastMath.PI;
         }
         else
             return Math.E; // euler
@@ -320,18 +396,23 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
 
     @Override
     public Double visitLimiteIntegracao(matematicaParser.LimiteIntegracaoContext ctx) {
-        if (ctx.valor() != null){
-            return visitValor(ctx.valor());
+        if (ctx.expressao().valor() != null){
+            return visitValor(ctx.expressao().valor());
         }
-        else if(ctx.Identificador() != null) {
-            EntradaTabelaDeSimbolos etds = tds.verificar(ctx.Identificador().getText());
+        else if(ctx.expressao().Identificador() != null) {
+            EntradaTabelaDeSimbolos etds = tds.verificar(ctx.expressao().Identificador().getText());
             if(etds == null){
-                throw new RuntimeException("ERRO SEMÂNTICO: "+ctx.Identificador().getText()+" Variável nao foi declarada.");
+                throw new RuntimeException("ERRO SEMÂNTICO: "+ctx.expressao().Identificador().getText()+" Variável nao foi declarada.");
             }
             return etds.valor;
         }
         else {
-            throw new RuntimeException("ERRO SEMÂNTICO: Os limites de integração estão mal formatados.");
+            try {
+                return visitExpressao(ctx.expressao());
+            }
+            catch (RuntimeException e) {
+                throw new RuntimeException("ERRO SEMÂNTICO: Os limites de integração estão mal formatados.");
+            }
         }
     }
 

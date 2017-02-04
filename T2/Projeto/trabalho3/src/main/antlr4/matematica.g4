@@ -34,7 +34,34 @@ funcao returns [String tipo]
  | identificadorF
  ;
 
-//(+|-)x^(n) (+|-)x^(n - 1) ... (+|-)x^(1) (+|-)n
+expressao returns [ String tipo ]
+ : '-' expressao           { $tipo = "unario";         }
+ | integral                { $tipo = "integral";       }
+ | derivada                { $tipo = "derivada";       }
+ | expressao '^' expressao { $tipo = "potencia";       }
+ | expressao '*' expressao { $tipo = "multiplicacao";  }
+ | expressao '/' expressao { $tipo = "divisao";        }
+ | expressao '+' expressao { $tipo = "soma";           }
+ | expressao '-' expressao { $tipo = "subtracao";      }
+ | '(' expressao ')'       { $tipo = "parenteses";     }
+ | valor                   { $tipo = "valor";          }
+ | identificadorF          { $tipo = "identificadorF"; }
+ | Identificador           { $tipo = "identificador";  }
+ | seno                    { $tipo = "seno";           }
+ | cosseno                 { $tipo = "cosseno";        }
+ ;
+
+ integral
+ : 'integre' expressao 'd' Identificador intervaloIntegracao
+ ;
+
+ derivada
+ : 'derive' expressao (pontoDerivacao)?
+ ;
+
+pontoDerivacao
+ : 'em' expressao
+ ;
 
 polinomio
  :
@@ -58,36 +85,16 @@ expoente
  : '^' numeroComSinal
  ;
 
- integral
- : 'integre' expressao 'd' Identificador (intervaloIntegracao)?
- ;
-
-expressao returns [ String tipo ]
- : '-' expressao           { $tipo = "unario";         }
- | integral                { $tipo = "integral";       }
- | expressao '^' expressao { $tipo = "potencia";       }
- | expressao '*' expressao { $tipo = "multiplicacao";  }
- | expressao '/' expressao { $tipo = "divisao";        }
- | expressao '+' expressao { $tipo = "soma";           }
- | expressao '-' expressao { $tipo = "subtracao";      }
- | '(' expressao ')'       { $tipo = "parenteses";     }
- | valor                   { $tipo = "valor";          }
- | identificadorF          { $tipo = "identificadorF"; }
- | Identificador           { $tipo = "identificador";  }
- | seno                    { $tipo = "seno";           }
- | cosseno                 { $tipo = "cosseno";        }
- ;
-
 intervaloIntegracao
  : 'de' l1 = limiteIntegracao 'a' l2 = limiteIntegracao 
  ;
 
 limiteIntegracao
- : (valor | Identificador)
+ : expressao
  ;
 
 identificadorF
- : ID1 = Identificador '('(ID2 = Identificador | Numero | expressao)')'
+ : ID1 = Identificador '('(ID2 = Identificador | expressao)')'
  ;
 
 relacao
@@ -120,10 +127,8 @@ valor returns [ String tipo ]
  ;
 
 constante
- : '+infinito'
- | '-infinito'
- | 'pi'
- | 'e'   //euler
+ :  'pi'
+ |  'e'   //euler
  ;
 
 numeroComSinal

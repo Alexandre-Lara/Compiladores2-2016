@@ -54,6 +54,30 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFuncao(matematicaParser.FuncaoContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link matematicaParser#expressao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpressao(matematicaParser.ExpressaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#integral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIntegral(matematicaParser.IntegralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#derivada}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDerivada(matematicaParser.DerivadaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link matematicaParser#pontoDerivacao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPontoDerivacao(matematicaParser.PontoDerivacaoContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link matematicaParser#polinomio}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -83,18 +107,6 @@ public interface matematicaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpoente(matematicaParser.ExpoenteContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link matematicaParser#integral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIntegral(matematicaParser.IntegralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link matematicaParser#expressao}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpressao(matematicaParser.ExpressaoContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link matematicaParser#intervaloIntegracao}.
 	 * @param ctx the parse tree

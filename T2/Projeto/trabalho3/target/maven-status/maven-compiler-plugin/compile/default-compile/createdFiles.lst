@@ -6,6 +6,7 @@ main/java/matematicaParser$PolinomioContext.class
 main/java/matematicaParser$ValorContext.class
 main/java/matematicaParser$IntegralContext.class
 main/java/matematicaLexer.class
+main/java/matematicaParser$DerivadaContext.class
 main/java/VisitorMatematica.class
 main/java/matematicaParser$CossenoContext.class
 main/java/TabelaDeSimbolos.class
@@ -33,6 +34,7 @@ main/java/matematicaParser$IntervaloIntegracaoContext.class
 main/java/matematicaParser$LimiteIntegracaoContext.class
 main/java/Intervalo.class
 main/java/matematicaParser$RelacaoContext.class
+main/java/matematicaParser$PontoDerivacaoContext.class
 main/java/MatValor.class
 main/java/matematicaParser$DeclaracaoContext.class
 main/java/matematicaListener.class

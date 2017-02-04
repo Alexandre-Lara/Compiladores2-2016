@@ -79,6 +79,46 @@ public interface matematicaListener extends ParseTreeListener {
 	 */
 	void exitFuncao(matematicaParser.FuncaoContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link matematicaParser#expressao}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressao(matematicaParser.ExpressaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#expressao}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressao(matematicaParser.ExpressaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#integral}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntegral(matematicaParser.IntegralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#integral}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntegral(matematicaParser.IntegralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#derivada}.
+	 * @param ctx the parse tree
+	 */
+	void enterDerivada(matematicaParser.DerivadaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#derivada}.
+	 * @param ctx the parse tree
+	 */
+	void exitDerivada(matematicaParser.DerivadaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link matematicaParser#pontoDerivacao}.
+	 * @param ctx the parse tree
+	 */
+	void enterPontoDerivacao(matematicaParser.PontoDerivacaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link matematicaParser#pontoDerivacao}.
+	 * @param ctx the parse tree
+	 */
+	void exitPontoDerivacao(matematicaParser.PontoDerivacaoContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link matematicaParser#polinomio}.
 	 * @param ctx the parse tree
 	 */
@@ -128,26 +168,6 @@ public interface matematicaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpoente(matematicaParser.ExpoenteContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link matematicaParser#integral}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntegral(matematicaParser.IntegralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link matematicaParser#integral}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntegral(matematicaParser.IntegralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link matematicaParser#expressao}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpressao(matematicaParser.ExpressaoContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link matematicaParser#expressao}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpressao(matematicaParser.ExpressaoContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link matematicaParser#intervaloIntegracao}.
 	 * @param ctx the parse tree

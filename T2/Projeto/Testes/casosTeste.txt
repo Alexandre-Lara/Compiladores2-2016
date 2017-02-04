@@ -49,28 +49,20 @@ print(-infinito)
 print(+infinito - (+infinito))
 print(-infinito + k1)
 
-//4) - Testes das funcoes seno e cosseno
-
-sen1 = sen(pi/4)
-cos1 = cos(0)
-tg  = sen1/cos1
-print(sen1 + cos1)
-print(tg)
-
-//5) - Teste da regra retorno
+//4) - Teste da regra retorno
 
 return (2*(2^2))/(4 - 1)
 return "fim da execução do programa" 
 
-
-// 6) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas
+// 5) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas
 
 print("*** Funcoes polinomiais ***") 
 f(x) = x
 g(x) = x^2 -2x +3 
 h(x) = -3
 l(x) = 3x^3
-k(x) = x^2 -2x +3 
+k(x) = -2x +3 -x^12 
+
 print("Exibindo funcoes:")
 print(f(x))
 print(g(x))
@@ -88,26 +80,61 @@ print(k(1))
 print("Atribuindo a uma variavel a avaliacao de uma funcao em um ponto")
 a2 = l(3)
 print(a2)
-*/
+
+print("Calculando composições de funcoes do tipo f(g(X)) e g(f(x))")
+print( g(f(1)) )
+print( f(g(2)) )
+print( sen(h(0)) )
+print( l(cos(-1)) )
+print(k(k(1)))
+
+
+// 6) - Testes de atribuição e avaliação de funções trigonométricas
 print("*** Funcoes trigonometricas ***") 
 c1(x) = cos(x)
 s1(x) = sen(x)
 print(c1(pi))
-print(s1(pi/2))
+print(s1(pi))
+tg_PI = s1(pi)/c1(pi)
+print("tangente de pi")
+print(tg_PI)
 
-/*
+sen1 = sen(pi/4)
+cos1 = cos(0)
+tg  = sen1/cos1
+print("sen1 + cos1")
+print(sen1 + cos1)
 
-// 7) - Testes de integração
+// 7) - Testes de integração de funções
+f(x) = x 
+g(x) = x^2 -2x +3 
+h(x) = -3
+i(x) = 3x^3
+j(x) = -1x^7 +3x^3 
+k(x) = x + 4
+seno(x) = sen(x)
+cosseno(x) = cos(x)
 
-//integralDef = integre f(x)dx de 0 a 1
-//print(integralDef)
-//print(f(x))
-cos1(x) = x^2 -2x +3 
-a1 = integre f(x)dx de 0 a 5
-print(a1)
-
-
-f(x) = x^4  +1x//+1x^4 +1x^3 +1x^2 +1x +3
-a1 = f(1.2)
-print(a1)
+print(integre f(x)dx       de 0 a e) 
+print(integre g(x)dx       de -1 a pi)
+print(integre h(x)dx       de 5 a 6)
+print(integre i(x)dx       de 0.5 a 3)
+print(integre j(x)dx       de -2.1 a 2.1)
+print(integre k(x)dx       de 0 a 20000)
+print(integre seno(x)dx    de 0 a pi)
+print(integre seno(x)dx    de -pi a pi)
+print(integre cosseno(x)dx de 0 a 2*pi)
+print(integre cosseno(x)dx de pi/2 a 2*pi)
+print(integre 5dx          de 0 a 4)
 */
+
+// 8) - Testes de derivação de funções
+f(x) = x 
+g(x) = x^2 -2x +3 
+h(x) = -3
+i(x) = 3x^3
+j(x) = -1x^7 +3x^3 
+k(x) = x + 4
+seno(x) = sen(x)
+cosseno(x) = cos(x)
+print(derive 5 em 3) 

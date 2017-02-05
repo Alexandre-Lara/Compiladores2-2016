@@ -1,5 +1,9 @@
 grammar matematica;
 
+/**
+ * Created by alexandre on 19/12/16.
+ */
+
 programa
  : bloco EOF
  ;
@@ -9,8 +13,9 @@ bloco
  ;
 
 retorno returns [String tipo]
- :'return' (expressao { $tipo = "expressao"; } | String { $tipo = "string"; } )
- ; 
+ : 'retorne' expressao { $tipo = "expressao"; }
+ | 'retorne' String    { $tipo = "string";    }
+ ;
 
 declaracao returns [String tipoDecl]
  : atribuicao { $tipoDecl = "atribuicao"; }
@@ -31,6 +36,7 @@ funcao returns [String tipo]
  : (relacao)? identificadorF '=' seno       { $tipo = "seno";     }
  | (relacao)? identificadorF '=' cosseno    { $tipo = "cosseno";  }
  | (relacao)? identificadorF '=' polinomio  { $tipo = "polinomio";}
+ | (relacao)? identificadorF '=' expressao  { $tipo = "derivada"; }
  | identificadorF
  ;
 
@@ -129,6 +135,8 @@ valor returns [ String tipo ]
 constante
  :  'pi'
  |  'e'   //euler
+ |  '+infinito'
+ |  '-infinito'
  ;
 
 numeroComSinal

@@ -1,0 +1,55 @@
+/* ----> pacote de teste 3 <----*/
+
+print("7) - Testes de integração de funções ")
+f1(x) = x 
+g1(x) = x^2 -2x +3 
+h1(x) = -3
+i1(x) = 3x^3
+j1(x) = -1x^7 +3x^3 
+k1(x) = x + 4
+seno1(x) = sen(x)
+cosseno1(x) = cos(x)
+
+print(integre f1(x)dx       de 0 a e      ) 
+print(integre g1(x)dx       de -1 a pi    )
+print(integre h1(x)dx       de 5 a 6      )
+print(integre i1(x)dx       de 0.5 a 3    )
+print(integre j1(x)dx       de -2.1 a 2.1 )
+print(integre k1(x)dx       de 0 a 20000  )
+print(integre seno1(x)dx    de 0 a pi     )
+print(integre seno1(x)dx    de -pi a pi   )
+print(integre cosseno1(x)dx de 0 a 2*pi   )
+print(integre cosseno1(x)dx de pi/2 a 2*pi)
+print(integre 5dx           de 0 a 4      )
+
+print("8) - Testes de derivação de funções")
+f(x) = x
+fLinha(x) = derive f(x)
+print(fLinha(x))
+
+g(x) = x^2 -2x +3 
+gLinha(x) = derive g(x)
+print(gLinha(x))
+
+h(x) = -3
+hLinha(x) = derive h(x)
+print(hLinha(x))
+
+i(x) = 3x^3
+print(derive i(x) em -0.7)
+
+j(x) = -1x^7 +3x^3 
+print(derive j(x) em 17)
+
+k(x) = x + 4
+print(derive k(x) em 2)
+
+seno(x) = sen(x)
+senoLinha(x) = derive seno(x)
+print(senoLinha(x))
+print(derive seno(x) em pi)
+
+cosseno(x) = cos(x)
+cossenoLinha(x) = derive cosseno(x)
+print(cossenoLinha(x))
+print(derive cosseno(x) em pi)

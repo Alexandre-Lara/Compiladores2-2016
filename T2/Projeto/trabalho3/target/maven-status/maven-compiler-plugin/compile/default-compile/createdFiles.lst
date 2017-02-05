@@ -20,7 +20,6 @@ main/java/matematicaParser$SenoContext.class
 main/java/matematicaParser$IdentificadorFContext.class
 main/java/matematicaParser$IntervaloContext.class
 main/java/matematicaBaseListener.class
-main/java/Dominio.class
 main/java/matematicaParser$NumeroComSinalContext.class
 main/java/matematicaParser$ContradominioContext.class
 main/java/matematicaBaseVisitor.class
@@ -32,10 +31,8 @@ main/java/matematicaParser$BlocoContext.class
 main/java/matematicaParser$IncognitaContext.class
 main/java/matematicaParser$IntervaloIntegracaoContext.class
 main/java/matematicaParser$LimiteIntegracaoContext.class
-main/java/Intervalo.class
 main/java/matematicaParser$RelacaoContext.class
 main/java/matematicaParser$PontoDerivacaoContext.class
-main/java/MatValor.class
 main/java/matematicaParser$DeclaracaoContext.class
 main/java/matematicaListener.class
 main/java/matematicaParser$FuncaoContext.class

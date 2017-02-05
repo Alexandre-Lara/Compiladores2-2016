@@ -1,10 +1,10 @@
 package main.java;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
+
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Created by alexandre on 19/12/16.

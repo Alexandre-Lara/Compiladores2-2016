@@ -38,15 +38,27 @@ public class TabelaDeSimbolos {
         etds.coefs = valor;
         tabelaDeSimbolos.put(nome, etds);
     }
+
     public void inserirSeno(String nome) {
         EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
         etds.nome = nome;
+        etds.valor = 1;
         etds.seno = new Sin();
         tabelaDeSimbolos.put(nome, etds);
     }
+
+    public void inserirSenoInv(String nome) {
+        EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
+        etds.nome = nome;
+        etds.valor = -1;
+        etds.seno = new Sin();
+        tabelaDeSimbolos.put(nome, etds);
+    }
+
     public void inserirCosseno(String nome) {
         EntradaTabelaDeSimbolos etds = new EntradaTabelaDeSimbolos();
         etds.nome = nome;
+        etds.valor = 1;
         etds.cosseno = new Cos();
         tabelaDeSimbolos.put(nome, etds);
     }

@@ -1,5 +1,5 @@
-/*
-//1) - Teste da funcao print
+/* ----> pacote de teste 1 <----*/
+print("1) - Teste da funcao print")
 
 print("**** Execução dos casos de teste ****")
 print(5) 
@@ -8,7 +8,7 @@ print(3 * 50)
 print(4 / 2)
 print(4 ^ 2)
 
-//2) - Teste de calculo de expressões aritmeticas simples
+print("2) - Teste de calculo de expressões aritméticas simples")
 
 a1 = 3
 b1 = 5
@@ -38,7 +38,7 @@ print(c6)
 print("c7")
 print(c7)
 
-//3) - Testes de manipulação das constantes (pi, e, +infinito, etc)
+print("3) - Testes de manipulação das constantes (pi, e, +infinito, etc)")
 
 k1 = pi
 k2 = e
@@ -49,92 +49,7 @@ print(-infinito)
 print(+infinito - (+infinito))
 print(-infinito + k1)
 
-//4) - Teste da regra retorno
+print("4) - Teste da regra retorno")
 
-return (2*(2^2))/(4 - 1)
-return "fim da execução do programa" 
-
-// 5) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas
-
-print("*** Funcoes polinomiais ***") 
-f(x) = x
-g(x) = x^2 -2x +3 
-h(x) = -3
-l(x) = 3x^3
-k(x) = -2x +3 -x^12 
-
-print("Exibindo funcoes:")
-print(f(x))
-print(g(x))
-print(h(x))
-print(l(x))
-print(k(x))
-
-print("Calculando funcoes em um ponto")
-print(f(1))
-print(g(2))
-print(h(0))
-print(l(-1))
-print(k(1))
-
-print("Atribuindo a uma variavel a avaliacao de uma funcao em um ponto")
-a2 = l(3)
-print(a2)
-
-print("Calculando composições de funcoes do tipo f(g(X)) e g(f(x))")
-print( g(f(1)) )
-print( f(g(2)) )
-print( sen(h(0)) )
-print( l(cos(-1)) )
-print(k(k(1)))
-
-
-// 6) - Testes de atribuição e avaliação de funções trigonométricas
-print("*** Funcoes trigonometricas ***") 
-c1(x) = cos(x)
-s1(x) = sen(x)
-print(c1(pi))
-print(s1(pi))
-tg_PI = s1(pi)/c1(pi)
-print("tangente de pi")
-print(tg_PI)
-
-sen1 = sen(pi/4)
-cos1 = cos(0)
-tg  = sen1/cos1
-print("sen1 + cos1")
-print(sen1 + cos1)
-
-// 7) - Testes de integração de funções
-f(x) = x 
-g(x) = x^2 -2x +3 
-h(x) = -3
-i(x) = 3x^3
-j(x) = -1x^7 +3x^3 
-k(x) = x + 4
-seno(x) = sen(x)
-cosseno(x) = cos(x)
-
-print(integre f(x)dx       de 0 a e) 
-print(integre g(x)dx       de -1 a pi)
-print(integre h(x)dx       de 5 a 6)
-print(integre i(x)dx       de 0.5 a 3)
-print(integre j(x)dx       de -2.1 a 2.1)
-print(integre k(x)dx       de 0 a 20000)
-print(integre seno(x)dx    de 0 a pi)
-print(integre seno(x)dx    de -pi a pi)
-print(integre cosseno(x)dx de 0 a 2*pi)
-print(integre cosseno(x)dx de pi/2 a 2*pi)
-print(integre 5dx          de 0 a 4)
-*/
-
-// 8) - Testes de derivação de funções
-f(x) = x 
-g(x) = x^2 -2x +3 
-h(x) = -3
-i(x) = 3x^3
-j(x) = -1x^7 +3x^3 
-k(x) = x + 4
-seno(x) = sen(x)
-cosseno(x) = cos(x)
-print(derive 5 em 3) 
+//retorne (2*(2^2))/(4 - 1)
+retorne "fim da execução do programa" 

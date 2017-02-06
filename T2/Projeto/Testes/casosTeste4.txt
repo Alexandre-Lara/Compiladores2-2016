@@ -1,0 +1,45 @@
+
+print("1)Programa para o cálculo de distâncias a partir da velocidade e aceleração.")
+a1 = 1
+c = 0.5
+
+Distancia(x) = 1x^2 - (4*a1*c)
+
+print("Distância em quilômetros: ")
+print(Distancia(12))
+
+print("2)Programa para o cálculo de área delimitada por um gráfico de uma f(x) qualquer.")
+
+{R|R}
+f(x) = (1/4)x^3 +4
+Area = integre f(x)dx de 1 a 10 
+print("Area total em m²:")
+print(Area)
+
+print("3)Programa para o cálculo de volume de sólidos de revolução.")
+{R|R}
+g(x) = cos(x)
+A = -2
+B = 8
+Vn = pi*(integre g(x)dx de A a B)
+print("Volume em m³: ")
+print(Vn)
+
+print("3)Programa para o cálculo de Momentos de Inércia de Sólidos.")
+r = 7.5
+V = 2
+Iz = integre r^2 dx de 0 a V
+print("Momento de inércia do sólido: ")
+print(Iz)
+
+print("4)Programa exemplo de uso de integrais e funções.")
+{R|R}
+h(x) = 1x^2 +2x +1
+k1 = 100
+k2 = 20000
+v1 = integre h(x)dx de 0 a e
+v2 = integre h(x)dx de k1 a k2
+print(v1)
+print(v1+v2)
+
+retorne "fim da execução dos testes."

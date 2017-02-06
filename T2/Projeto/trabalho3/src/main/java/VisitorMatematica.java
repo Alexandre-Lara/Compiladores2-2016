@@ -102,19 +102,29 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
                     throw new RuntimeException("Erro semântico: Redeclaração de variável ou funcao: " + ctx.identificadorF().ID1.getText());
                 } else {
                     if (ctx.identificadorF().expressao() != null) {
-                        throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " A funcao deve ser do tipo f(x), onde f e x são identificadores.");
+                        throw new RuntimeException("Erro semântico: " + ctx.identificadorF().ID1.getText() + " A funcao deve ser do tipo f(x), onde f é um identificador e x é fixo.");
                     } else {
                         HashMap<Double, Double> expCoef = new HashMap<>(); //par : coeficiente -> expoente
                         Double exp, coef;
                         for (int i = 0; i < ctx.polinomio().monomio().size(); i++) {
                             if (ctx.polinomio().monomio(i).coef2 != null) {
-                                coef = Double.parseDouble(ctx.polinomio().monomio(i).coef2.numeroComSinal().getText());
+                                if (ctx.polinomio().monomio(i).coeficiente().tipo.equals("numero")){
+                                    coef = Double.parseDouble(ctx.polinomio().monomio(i).coef2.numeroComSinal().getText());
+                                }
+                                else {
+                                    coef = visitExpressao(ctx.polinomio().monomio(i).coef2.expressao());
+                                }
                                 exp = 0.0;
                             } else {
                                 if (ctx.polinomio().monomio(i).coeficiente() == null) {
                                     coef = 1.0;
                                 } else {
-                                    coef = Double.parseDouble(ctx.polinomio().monomio(i).coeficiente().numeroComSinal().getText());
+                                    if (ctx.polinomio().monomio(i).coeficiente().tipo.equals("numero")){
+                                        coef = Double.parseDouble(ctx.polinomio().monomio(i).coeficiente().numeroComSinal().getText());
+                                    }
+                                    else{
+                                        coef = visitExpressao(ctx.polinomio().monomio(i).coeficiente().expressao());
+                                    }
                                 }
                                 if (ctx.polinomio().monomio(i).expoente() == null) {
                                     exp = 1.0;
@@ -169,7 +179,7 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
                     tds.inserirFuncao(ctx.identificadorF().ID1.getText(), vetorCoefAuxiliar);
                     return null;
                 } else {
-                    throw new RuntimeException("Erro semântico: " + ctx.expressao().getText() + "Não é possível atribuir esse conteúdo a uma função.");
+                    throw new RuntimeException("Erro semântico: " + ctx.expressao().getText() + " Não é possível atribuir esse conteúdo a uma função.");
                 }
         }
         return null;
@@ -182,7 +192,11 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
 
             case "identificador":
                 //retornar o valor de um identificador
+
                 EntradaTabelaDeSimbolos aux = tds.verificar(ctx.Identificador().getText());
+                if (aux == null){
+                    throw new RuntimeException("A variavel " + ctx.Identificador().getText()+ " não foi declarada.");
+                }
                 return aux.valor;
 
             case "identificadorF":
@@ -346,6 +360,10 @@ public class VisitorMatematica extends matematicaBaseVisitor<Double> {
             case "unario":  //negar e retornar o valor da expressao
                 return -1 * visitExpressao(ctx.expressao(0));
 
+            case "unarioSoma": {
+                System.out.println(ctx.expressao(0).getText());
+                return visitExpressao(ctx.expressao(0));
+            }
 
             // retornar valores simples: valores e constantes
             case "valor":  // um valor pode ser Numero ou Constante

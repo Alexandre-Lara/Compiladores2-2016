@@ -23,17 +23,8 @@ public class Teste {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         matematicaParser parser = new matematicaParser(tokens);
 
-        //SaidaParser out = new SaidaParser();
-        //T1ErrorListener e = new T1ErrorListener(out);
-        //parser.addErrorListener(e);
         VisitorMatematica v = new VisitorMatematica();
         matematicaParser.ProgramaContext arvore = parser.programa();
         v.visitPrograma(arvore);
-
-
-        //PrintWriter outputTestCase = new PrintWriter(outputFilePath, "UTF-8");
-        //outputTestCase.print(out.toString());
-        //outputTestCase.close();
-
     }
 }

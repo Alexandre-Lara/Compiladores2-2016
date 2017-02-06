@@ -15,13 +15,6 @@ f(x) = x^(5/2)
 g(x) = x^2 + (-2*x) + 3 --- atencao no operador unario
 g(x) = x^2 - 2*x + 3
 
-class FunctionGX implements IntegralFunction {
-	public double function(double x) {
-		return Math.pow(x,2) - 2*x + 3;
-	}
-}
-
-
 {N|N}
 h(x) = (5*x + 2)^(1/3)
 
@@ -113,6 +106,5 @@ print(v1+v2)
 limite de f(x) com x indoPara 5
 
 derivada de f(x)
-
 
 Eclipse xtext

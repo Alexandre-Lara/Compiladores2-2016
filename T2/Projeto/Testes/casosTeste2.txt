@@ -3,8 +3,8 @@
 print("5) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas")
 
 print("*** Funcoes polinomiais ***") // cuidado com -x, deve ser -1x
-f(x) = x
-g(x) = x^2 -2x +3 
+f(x) = 1x
+g(x) = 1x^2 -2x +3 
 h(x) = -3
 l(x) = 3x^3
 k(x) = -2x +3 -1x^12  
@@ -48,4 +48,4 @@ sen1 = sen(pi/4)
 cos1 = cos(0)
 tg2  = sen1/cos1
 print("sen1 + cos1")
-print(sen1 + cos1)
+print(sen1 + cos1)	

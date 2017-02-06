@@ -42,6 +42,7 @@ funcao returns [String tipo]
 
 expressao returns [ String tipo ]
  : '-' expressao           { $tipo = "unario";         }
+ | '+' expressao           { $tipo = "unarioSoma";     }
  | integral                { $tipo = "integral";       }
  | derivada                { $tipo = "derivada";       }
  | expressao '^' expressao { $tipo = "potencia";       }
@@ -52,13 +53,14 @@ expressao returns [ String tipo ]
  | '(' expressao ')'       { $tipo = "parenteses";     }
  | valor                   { $tipo = "valor";          }
  | identificadorF          { $tipo = "identificadorF"; }
+ | X                       { $tipo = "X";              }
  | Identificador           { $tipo = "identificador";  }
  | seno                    { $tipo = "seno";           }
  | cosseno                 { $tipo = "cosseno";        }
  ;
 
  integral
- : 'integre' expressao 'd' Identificador intervaloIntegracao
+ : 'integre' expressao 'd' X intervaloIntegracao
  ;
 
  derivada
@@ -80,11 +82,12 @@ monomio
  ;
 
 incognita
- : Identificador
+ : X
  ;
 
-coeficiente
- : numeroComSinal 
+coeficiente returns [ String tipo ]
+ : numeroComSinal { $tipo = "numero";}
+ | expressao      { $tipo = "expressao";}
  ;
 
 expoente
@@ -100,7 +103,7 @@ limiteIntegracao
  ;
 
 identificadorF
- : ID1 = Identificador '('(ID2 = Identificador | expressao)')'
+ : ID1 = Identificador '('(ID2 = X | expressao)')'
  ;
 
 relacao
@@ -142,6 +145,10 @@ constante
 numeroComSinal
  : Numero
  | '+'Numero
+ ;
+
+X
+ : 'x'
  ;
 
 Identificador

@@ -1,0 +1,67 @@
+print("5) - Testes de atribuição e avaliação de funções polinomiais e trigonométricas")
+g(x) = 1x^2 -2x +3 
+k(x) = -2x +3 -1x^12  
+
+print("Exibindo funcoes:")
+print(g(x))
+print(k(x))
+
+print("Calculando composições de funcoes do tipo f(g(X)) e g(f(x))")
+print( g(k(1)) )
+print( k(cos(-1)) )
+
+print("6) - Testes de atribuição e avaliação de funções trigonométricas")
+c1(x) = cos(x)
+s1(x) = sen(x)
+print(c1(pi))
+print(s1(pi))
+tg_PI = s1(pi)/c1(pi)
+print("tangente de pi")
+print(tg_PI)
+
+print("7) - Testes de integração de funções ")
+print(integre g(x)dx  de 0 a e      ) 
+print(integre k(x)dx  de -1 a pi    )
+print(integre c1(x)dx de 0 a pi     )
+print(integre s1(x)dx de 0 a 2*pi   )
+
+print("8) - Testes de derivação de funções")
+gLinha(x) = derive g(x)
+print(gLinha(x))
+print(derive k(x) em 17)
+
+senoLinha(x) = derive s1(x)
+print(senoLinha(x))
+print(derive s1(x) em pi)
+
+print("1)Programa para o cálculo de distâncias a partir da velocidade e aceleração.")
+a1 = 1
+c = 0.5
+Distancia(x) = 1x^2 - (4*a1*c)
+print("Distância em quilômetros: ")
+print(Distancia(12))
+
+print("2)Programa para o cálculo de área delimitada por um gráfico de uma f(x) qualquer.")
+{R|R}
+f(x) = (1/4)x^3 +4
+Area = integre f(x)dx de 1 a 10 
+print("Area total em m²:")
+print(Area)
+
+print("3)Programa para o cálculo de volume de sólidos de revolução.")
+{R|R}
+g1(x) = cos(x)
+A = -2
+B = 8
+Vn = pi*(integre g1(x)dx de A a B)
+print("Volume em m³: ")
+print(Vn)
+
+print("4)Programa para o cálculo de Momentos de Inércia de Sólidos.")
+r = 7.5
+V = 2
+Iz = integre r^2 dx de 0 a V
+print("Momento de inércia do sólido: ")
+print(Iz)
+
+retorne "sucesso"

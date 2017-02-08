@@ -2,48 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d8b0f43-bda2-4bc0-b12b-b9efc051be45" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Testes/exemplosDaLinguagemMatematica.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/Teste.class" afterPath="$PROJECT_DIR$/target/classes/main/java/Teste.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/VisitorMatematica.class" afterPath="$PROJECT_DIR$/target/classes/main/java/VisitorMatematica.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaLexer.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$AtribuicaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$AtribuicaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$CoeficienteContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$CoeficienteContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ConstanteContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ConstanteContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ContradominioContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ContradominioContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$CossenoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$CossenoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$DerivadaContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$DerivadaContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$DominioContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$DominioContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ExpoenteContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ExpoenteContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ExpressaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ExpressaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$FuncaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$FuncaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IdentificadorFContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IdentificadorFContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IncognitaContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IncognitaContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntegralContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntegralContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntervaloContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntervaloContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntervaloIntegracaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$IntervaloIntegracaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$LimiteIntegracaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$LimiteIntegracaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$MonomioContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$MonomioContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$NumeroComSinalContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$NumeroComSinalContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PolinomioContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PolinomioContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PontoDerivacaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PontoDerivacaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PrintContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$PrintContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$RelacaoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$RelacaoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$RetornoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$RetornoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$SenoContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$SenoContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ValorContext.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser$ValorContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/main/java/matematicaParser.class" afterPath="$PROJECT_DIR$/target/classes/main/java/matematicaParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/trabalho3-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/trabalho3-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ArquivosBaixadosParaTeste/java_integral/integral/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../ArquivosBaixadosParaTeste/java_integral/integral/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Testes/casosTeste2.txt" afterPath="$PROJECT_DIR$/../Testes/casosTeste2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Testes/casosTeste3.txt" afterPath="$PROJECT_DIR$/../Testes/casosTeste3.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/antlr4/matematica.g4" afterPath="$PROJECT_DIR$/src/main/antlr4/matematica.g4" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Teste.java" afterPath="$PROJECT_DIR$/src/main/java/Teste.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/VisitorMatematica.java" afterPath="$PROJECT_DIR$/src/main/java/VisitorMatematica.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matematica.tokens" afterPath="$PROJECT_DIR$/src/main/java/matematica.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matematicaLexer.java" afterPath="$PROJECT_DIR$/src/main/java/matematicaLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matematicaLexer.tokens" afterPath="$PROJECT_DIR$/src/main/java/matematicaLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/matematicaParser.java" afterPath="$PROJECT_DIR$/src/main/java/matematicaParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Teste.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
+              <caret line="15" column="124" lean-forward="false" selection-start-line="15" selection-start-column="124" selection-end-line="15" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -845,11 +807,12 @@
       <workItem from="1485711868118" duration="73193000" />
       <workItem from="1486327189737" duration="7839000" />
       <workItem from="1486345308020" duration="249000" />
+      <workItem from="1486508181166" duration="2469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188607000" />
+    <option name="totallyTimeSpent" value="191076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -886,7 +849,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50250417" sideWeight="0.48937786" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.48937786" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2822458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1227,7 +1190,7 @@
         <state relative-caret-position="2913">
           <caret line="1855" column="0" lean-forward="false" selection-start-line="1855" selection-start-column="0" selection-end-line="1855" selection-end-column="0" />
           <folding>
-            <marker date="1486345547304" expanded="false" signature="71:92" ph="..." />
+            <marker date="1486510530356" expanded="false" signature="71:92" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1298,7 +1261,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Teste.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="15" column="105" lean-forward="false" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
+          <caret line="15" column="124" lean-forward="false" selection-start-line="15" selection-start-column="124" selection-end-line="15" selection-end-column="124" />
           <folding />
         </state>
       </provider>

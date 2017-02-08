@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Teste {
 
     public static void main(String args[]) throws IOException, RecognitionException {
-        String inputFilePath = "/home/alexandre/Documents/Compiladores2-2016/T2/Projeto/Testes/casosTeste.txt";//args[0];
+        String inputFilePath = "/home/alexandre/Documents/Compiladores2-2016/T2/Projeto/Testes/casosTesteParaApresentacao.tatxt";//args[0];
         //String outputFilePath = args[1];
 
         FileReader inputTestCase = new FileReader(inputFilePath);
